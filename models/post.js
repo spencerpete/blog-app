@@ -23,7 +23,7 @@ const Post = new Schema(
         content: {
             title: {
                 type: String,
-                maxLength: 40,
+                maxLength: 100,
                 required: true
             },
             body: {

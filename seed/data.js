@@ -8,13 +8,13 @@ const insertData = async () => {
     const posts = [...Array(20)].map(post => {
         return {
             author: {
-                name: faker.person.name(),
+                name: `${faker.name.firstName()} ${faker.name.lastName()}`,
                 email: faker.internet.email(),
                 bio: faker.lorem.sentence()
             },
             content: {
-                title: faker.sentence(nb_words = 5),
-                body: faker.lorem.paragraphs(nb = 3),
+                title: faker.lorem.sentence(),
+                body: faker.lorem.paragraphs(),
                 publishDate: faker.date.past()
             }
         }
