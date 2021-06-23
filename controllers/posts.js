@@ -42,3 +42,17 @@ export const updatePost = async (req, res) => {
     res.status(500).send(error.message)
   }
 }
+
+export const deletePost = async (req, res) => {
+  try {
+    const {id} = req.params
+    const deleted = await Post.findByIdAndDelete(id)
+    if (deleted) {
+      return res.status(200).send('Post deleted.')
+    } else {
+      throw new Error()
+    }
+  } catch (error) {
+    res.status(404).send('Post not found')
+  }
+}
