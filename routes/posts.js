@@ -5,6 +5,7 @@ const router = Router()
 
 router.get('/posts', controllers.getPosts)
 router.get('/posts/:id', controllers.getOnePost)
-router.post('/post', controllers.createPost)
+router.post('/posts', controllers.createPost)
+router.put('/posts/:id', controllers.updatePost)
 
 export default router
