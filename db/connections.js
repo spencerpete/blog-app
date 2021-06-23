@@ -1,14 +1,18 @@
 import mongoose from 'mongoose';
+// require('dotenv').config();
+import dotenv from 'dotenv'
+const config = dotenv.config()
 
-let MONGODB_URI = process.env.PROD_MONGODB || 'mongodb://127.0.0.1:27017/blogAppDatabase';
+// let MONGODB_URI = process.env.PROD_MONGODB || 'mongodb://127.0.0.1:27017/blogAppDatabase';
+let MONGODB_URI;
 
 // FOR USE WITH DEVELOPMENT DATABASE
-// if (process.env.NODE_ENV === 'production') {
-//   MONGODB_URI = process.env.PROD_MONGODB
-// } else {
-// MONGODB_URI = process.env.DEV_MONGODB
-//   MONGODB_URI = ''
-// }
+if (process.env.NODE_ENV === 'production') {
+  MONGODB_URI = process.env.PROD_MONGODB;
+} else {
+  console.log(process.env.DEV_MONGODB)
+  MONGODB_URI = process.env.DEV_MONGODB;
+}
 
 // Uncomment to debug Mongoose queries
 // mongoose.set('debug', true)
