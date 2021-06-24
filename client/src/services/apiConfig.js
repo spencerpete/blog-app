@@ -3,7 +3,7 @@ import axios from 'axios';
 let apiURL;
 
 const apiURLs = {
-  production: '',
+  production: 'https://room1-blog-app.herokuapp.com/api',
   development: 'http://localhost:3000/api',
 };
 
